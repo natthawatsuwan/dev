@@ -5,4 +5,8 @@ dev/
     routes.py
     template/
        index.html
+       support.html
+    static/
+       styles/
+          style.css 
   main.py
