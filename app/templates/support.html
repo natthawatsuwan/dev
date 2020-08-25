@@ -20,8 +20,38 @@
 <body>
 Welcome to my Page
 <form action="search" method="GET">Search<input name="search" id="search"></form>
+<center>
+   {% for r in result %}
+     <br><b>Author : </b>{{r.author}}	
+	 <b>Comment : </b>{{r.quote}}</br>
+  {% endfor %}
+   </center>
+   
+   
+   
+    <br> </br>
+   <center>
+<div class="container">
+  <form action="/process" method="POST">
+     <div class="form-group">
+	   <label for="author">Quote Author</label>
+	   <input type="text" class="form-control" name="author"placeholder="Add quote author">
+	   
+	 
+	 <div class="form-group">
+	   <label for="quote">Quote</label>
+	      <textarea class="form-control" rows="10" cols="50" name="quote" placeholder="Add your quote here..."> </textarea>
+	 </div>
+	 
+	 
+	 <button type="submit" class="btn btn-lg btn-primary btn-block">Submit</button>
+	 
+	 
+ </form>
+	 
+</div>
 
-
+</center>
 </body>
 </html>
 
