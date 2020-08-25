@@ -12,9 +12,8 @@ db=SQLAlchemy(app)
 
 class comment(db.Model):
    idc = db.Column(db.Integer, primary_key=True)
-   author = db.column(db.String(20))
-   
-   quote = db.column(db.String(2000))
+   author = db.Column(db.String(20))
+   quote = db.Column(db.String(2000))
 
    
 
@@ -22,17 +21,9 @@ class comment(db.Model):
 def index():
     return render_template('index.html')
 
-@app.route('/Boom')
-def myDave():
-    return 'Hello World - From Boom'
-
 @app.route('/home')
 def home():
-  return render_template('index2.html',name="boom")
-
-@app.route('/person')
-def person():
-  return 'Hello World - From Person'
+  return render_template('index.html')
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -65,26 +56,23 @@ def register():
         </form>
     ''' 
   
-@app.route('/quotes')
-def quotes():
-  return render_template('quotes.html')
+#@app.route('/quotes')
+#def quotes():
+  #return render_template('support.html')
   
   
 @app.route('/process',methods=['POST'])
 def process():
-  author = request.form['author']
-  quote = request.form['quote']
-  
-  #quoutedata =comment(author=author,quote=quote)
-  #db.session.add(quotedata)
-  #db.session.commit()
-  
-  return redirect(url_for('support.html'))
-  
+  authors = request.form['author']
+  quotes = request.form['quote']
+  quoutedata =comment(author=authors,quote=quotes)
+  db.session.add(quoutedata)
+  db.session.commit()
+  result = comment.query.all()
+  return render_template('support.html',result=result)
   
   
 @app.route('/support')
 def support():
   result = comment.query.all()
-  fruits = ["apple","grapes","berries","oranges"]
-  return render_template('support.html',quotes="boom",fruits=fruits,result=result)
+  return render_template('support.html',result=result)
