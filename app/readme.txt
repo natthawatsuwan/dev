@@ -1,5 +1,5 @@
 dev/
-  base/
+  base/  #venv environment
   app/
     __init__.py
     routes.py
@@ -10,3 +10,4 @@ dev/
        styles/
           style.css 
   main.py
+  __init__.py #ver.3.2-
