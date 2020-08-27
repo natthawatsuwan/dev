@@ -7,6 +7,9 @@ dev/
     template/
        index.html
        support.html
+       register.html
+       update.html
+       signin.html
     static/
        styles/
           style.css 
