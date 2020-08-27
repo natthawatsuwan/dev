@@ -20,8 +20,11 @@
 <body>
 Welcome to my Page
 <form action="search" method="GET">Search<input name="search" id="search"></form>
-
+{% for r in result %}
+     <br><b>user : </b>{{r.username}}	
+	 <b>password : </b>{{r.hashed_pswd}}
+	 <b>email : </b>{{r.email}}</br>
+  {% endfor %}
 
 </body>
 </html>
-

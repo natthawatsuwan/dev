@@ -1,0 +1,102 @@
+<!doctype html>
+<title>Welcome to myPage</title>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/mystyle.css') }}">
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}">
+
+
+<center>
+<button class="btn success"><a href="home" class="active">Home</a></button>
+<button class="btn info"><a href="login" class="active">user</a></button>
+<button class="btn warning"><a href="registfrom" class="active">Register</a></button>
+<button class="btn danger"><a href="update" class="active">Update</a></button>
+<button class="btn danger">Delete</button>
+<button class="btn default"><a href="support" class="active">support</a></button>
+</center>
+
+</head>
+<body>
+Welcome to my Page
+<form action="search" method="GET">Search<input name="search" id="search"></form>
+
+<center>
+        สมัครสมาชิก
+<center>
+	
+<form action="/register" method="POST">
+<table border="0" cellpadding="3" cellspacing="0">
+    <tr>
+        <td>
+            Username:
+        </td>
+        <td>
+            <input type=text name=username id="txtid" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Password:
+        </td>
+        <td>
+            <input type="password" name=password id="txtPassword" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Confirm Password:
+        </td>
+        <td>
+            <input type="password" name=auth-password  id="txtConfirmPassword" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+           e-mail
+        </td>
+        <td>
+             <input type=text name=email id="txtemail" >
+        </td>
+    </tr>
+    <tr>
+        <td>
+        </td>
+        <td>
+            <input type=submit value=agree id="btnSubmit">
+        </td>
+    </tr>
+</table>
+</form>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $("#btnSubmit").click(function () {
+		    var idu = $("#txtid").val();
+			var emails = $("#txtemail").val();
+            var password = $("#txtPassword").val();
+            var confirmPassword = $("#txtConfirmPassword").val();
+            if (password != confirmPassword) {
+                alert("Passwords do not match.");
+                return false;
+            }
+			else if(!idu)
+			{
+			   alert("กรุณากรอก Username");
+               return false;
+			}
+			else if(!emails)
+			{
+			   alert("กรุณากรอก e-mail");
+               return false;
+			}
+            return true;
+        });
+    });
+</script>
+</center>		
+
+
+</body>
+</html>
+
