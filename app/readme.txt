@@ -3,6 +3,7 @@ dev/
   app/
     __init__.py
     routes.py
+    models.py   #class
     template/
        index.html
        support.html
