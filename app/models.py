@@ -15,7 +15,55 @@ class comment(db.Model):
    
    
 class users(db.Model):
+    __tablename__ = "users"
     idu = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(25), unique=True, nullable=False)
     hashed_pswd = db.Column(db.String(), nullable=False)
     email = db.Column(db.String(100), nullable=False)
+    def __init__(self,username,hashed_pswd,email ):
+        self.username = username
+        self.hashed_pswd = hashed_pswd
+        self.email = email
+
+    def is_authenticated(self):
+        return True
+
+    def is_active(self):
+        return True
+
+    def is_anonymous(self):
+        return False
+
+    def get_id(self):
+        return str(self.id)
+
+    def __repr__(self):
+        return '<User %r>' %(self.username)
+
+class loginuser(db.Model):
+    
+    idu = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(25), unique=True, nullable=False)
+    hashed_pswd = db.Column(db.String(), nullable=False)
+    email = db.Column(db.String(100), nullable=False)
+    def __init__(self,username,hashed_pswd):
+        self.username = username
+        self.hashed_pswd = hashed_pswd
+
+
+    def is_authenticated(self):
+        return True
+
+    def is_active(self):
+        return True
+
+    def is_anonymous(self):
+        return False
+
+    def get_id(self):
+        return str(self.id)
+
+    def __repr__(self):
+        return '<User %r>' %(self.username)
+	
+	
