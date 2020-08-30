@@ -14,12 +14,13 @@
 <button class="btn danger"><a href="update" class="active">Update</a></button>
 <button class="btn danger">Delete</button>
 <button class="btn default"><a href="support" class="active">support</a></button>
+<button class="btn default"><a href="profile" class="active">profile</a></button>
 </center>
 
 </head>
 <body>
 Welcome to my Page
-<form action="search" method="GET">Search<input name="search" id="search"></form>
+<form action="search" method="POST">Search<input name="search" id="search"></form>
 <center>
    {% for r in result %}
      <br><b>Author : </b>{{r.author}}	

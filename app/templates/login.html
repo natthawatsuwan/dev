@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/mystyle.css') }}">
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}">
+
+
+<center>
+<button class="btn success"><a href="home" class="active">Home</a></button>
+<button class="btn info"><a href="login" class="active">user</a></button>
+<button class="btn warning"><a href="registfrom" class="active">Register</a></button>
+<button class="btn danger"><a href="update" class="active">Update</a></button>
+<button class="btn danger">Delete</button>
+<button class="btn default"><a href="support" class="active">support</a></button>
+<button class="btn default"><a href="profile" class="active">profile</a></button>
+</center>
+
+</head>
+{{form}}
+<br>
+<body>
+<center>
+  <section class="hero is-info is-fullheight">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-half">
+            <form method="POST">
+              <div class="field">
+                <label class="label">Username</label>
+                <div class="control has-icons-left has-icons-right">
+                  <input class="input" type="text" name="username" placeholder="Username">
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-user"></i>
+                  </span>
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Password</label>
+                <p class="control has-icons-left">
+                  <input class="input" type="password" name="password" placeholder="Password">
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-lock"></i>
+                  </span>
+                </p>
+              </div>
+              <div class="field">
+                <p class="control">
+                  <button type="submit" class="button is-success">
+                    Login
+                  </button>
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <button><a href="registfrom" class="active">กรุณาสมัคร สมาชิก</a></button>
+  <br>
+  <p style="color:red">{{status}}</p>
+  <center>
+</body>
+
+</html>

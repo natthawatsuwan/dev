@@ -1,8 +1,7 @@
-<!doctype html>
-<title>Welcome to myPage</title>
+<!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8">
 <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/mystyle.css') }}">
 <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}">
 
@@ -16,12 +15,21 @@
 <button class="btn default"><a href="support" class="active">support</a></button>
 <button class="btn default"><a href="profile" class="active">profile</a></button>
 </center>
-</head>
-<body>
-Welcome to my Page
-<form action="search" method="POST">Search<input name="search" id="search"></form>
 
-
-</body>
+  </head>
+  <body>
+    <section class="hero is-success is-fullheight">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">
+            {{name}}'s Profile
+          </h1>
+          <h2 class="subtitle">
+            favorite fruits<br>
+          </h2>
+        </div>
+      </div>
+    </section>
+	<button><a href="dropsession" class="active">logout</a></button>
+  </body>
 </html>
-
