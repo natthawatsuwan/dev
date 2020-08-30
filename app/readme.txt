@@ -9,7 +9,8 @@ dev/
        support.html
        register.html
        update.html
-       signin.html
+       login.html
+       profile.html
     static/
        styles/
           style.css 
